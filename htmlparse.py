@@ -5,7 +5,6 @@ def post_parse(python, client, data):
 
     for i in data:
         o = i.split("=")
-        print(o)
         o[1] = o[1].replace("+", " ")
         form[o[0]] = o[1]
 
