@@ -1,5 +1,4 @@
 import os
-import post
 
 def post_parse(python, client, data):
     form = {}
