@@ -11,8 +11,8 @@
     import random
     
     def getMethod(get):  # If the form's method is get, it calls this function
-    	min = get["min"] # from input called min
-        max = get["max"] # from input called max
+ 		min = get["min"] # from input called min	
+		max = get["max"] # from input called max
    	nbr = random.randrange(min,max)
         return "<p>Your random number is {}</p>".format(nbr)
         
