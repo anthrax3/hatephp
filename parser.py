@@ -12,12 +12,12 @@ def send(filename):
 	file.close()
 	return content
 
-def parse(html, data, post):
+def parse(html, data, post, defaultfile):
 	datalst = data.split('\n')
 	method = datalst[0].split(' ')[0]
 	filename = datalst[0].split(' ')[1][1:]
 	if(filename == ''):
-		filename = 'index.html'
+		filename = defaultfile
 	
 	host = datalst[1].split(' ')[1]
 	agent = datalst[2].split(' ')[1]
@@ -25,23 +25,23 @@ def parse(html, data, post):
 
 
 	if(method == "GET"):
-		if(".py" in filename):
-			if("?" in filename):
-				file = filename.split('?')[0][:-3]
-				var = filename.split('?')[1].split('&')
-			else:
-				file = filename[:-3]
-
+		if("?" in filename):
+			html.send("<meta charset=\"utf-8\">")
+			file = filename.split('?')[0][:-3]
+			var = filename.split('?')[1].split('&')
 			get = {}
+				
 			for vari in var:
+				print(vari)
 				todo = vari.split('=')
 				get[todo[0]] = todo[1]
 
 			exec("from {} import getMethod".format(file))
-			html.send("<head><meta charset='utf-8'></head>")
 			html.send(getMethod(get))
 			bye(file)
+			
 		else:
+			file = filename[:-3]
 			html.send(send(filename))
 
 	if(method == "POST"):
