@@ -14,7 +14,7 @@
  		min = get["min"] # from input called min	
 		max = get["max"] # from input called max
    	nbr = random.randrange(min,max)
-        return "<p>Your random number is {}</p>".format(nbr)
+        	return "<p>Your random number is {}</p>".format(nbr)
         
     def postMethod(post):
     	return "<strong>Oops, I've coded this program only for get method</strong>"
