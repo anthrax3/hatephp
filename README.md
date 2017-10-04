@@ -1,4 +1,4 @@
-# HatePhp <sub>2.0</sub>
+# HatePhp <sub>2.1</sub>
 
 ## HatePhp <sub>2.1</sub>
 * Session variable has been added
