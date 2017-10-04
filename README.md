@@ -10,10 +10,10 @@
 	import random
 
 	def getMethod(server):  # If the form's method is get, it calls this function
-	min = server.get["min"] # from input called min
-	max = server.get["max"] # from input called max
-	nbr = random.randrange(min,max)
-				return "<p>Your random number is {}</p>".format(nbr)
+		min = server.get["min"] # from input called min
+		max = server.get["max"] # from input called max
+		nbr = random.randrange(min,max)
+		return "<p>Your random number is {}</p>".format(nbr)
 
 	def postMethod(server):
 		return "<strong>Oops, I've coded this program only for get method</strong>"
